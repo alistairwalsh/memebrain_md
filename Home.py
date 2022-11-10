@@ -2,11 +2,10 @@ import streamlit as st
 
 with open('medicine_ampouls.txt', 'r') as infile:
     for line in infile.readlines():
-        if line.startswith('class'):
-            line.split(' ')[1]
-        else:
+        if line.strip().startswith(('class','scope','model','hiddenSelections','ITEM_DAMAGE_SYSTEM','{','}','AMPOUL_ANIM_EVENT')):
             pass
-        st.write(line)
+        else:
+            st.write(line)
 
 # with open('medicine_injectors.txt', 'r') as infile:
 #     injectors = infile.read()
