@@ -6,7 +6,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
         if line.strip().startswith(('class')):
             new_k = line.split()[1]
             medicine_text[new_k] = []
-        elif len(line) < 1 or line.startswith('{','}'):
+        elif len(line) < 1 or line.startswith(('{','}')):
             pass
         else:
             medicine_text[new_k].append(line)
