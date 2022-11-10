@@ -10,7 +10,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
 
 st.write(medicine_text.replace('"', ''))
 
-for line in medicine_text:
+#for line in medicine_text:
 
 
 # with open('medicine_injectors.txt', 'r') as infile:
