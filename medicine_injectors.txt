@@ -1,31 +1,3 @@
-#define INJECTOR_ANIM_EVENTS class AnimEvents\
-{\
-    class SoundWeapon\
-    {\
-        class Morphine_spear\
-        {\
-            soundSet="Morphine_spear_SoundSet";\
-            id=201;\
-        };\
-        class Morphine_out\
-        {\
-            soundSet="Morphine_out_SoundSet";\
-            id=202;\
-        };\
-    };\
-}
-
-
-class InjectorBase : Inventory_Base
-{
-    descriptionShort="#syb_injector_base_desc";
-    rotationFlags=17;
-    itemSize[]={1,2};
-    weight=60;
-    overdosedIncrement=0.4;
-    medicalItem=1;
-};
-
 class InjectorPromedol : InjectorBase
 {
     scope=2;
