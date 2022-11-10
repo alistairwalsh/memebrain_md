@@ -6,7 +6,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
         if line.strip().startswith(('class','scope','model','hiddenSelections','ITEM_DAMAGE_SYSTEM','{','}','AMPOUL_ANIM_EVENT')):
             pass
         else:
-            medicine_text.append(line.strip())
+            medicine_text += line.strip()
 
 st.write(medicine_text)
 
