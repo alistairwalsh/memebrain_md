@@ -1,11 +1,14 @@
 import streamlit as st
 
 with open('medicine_ampouls.txt', 'r') as infile:
+    medicine_text = ''
     for line in infile.readlines():
         if line.strip().startswith(('class','scope','model','hiddenSelections','ITEM_DAMAGE_SYSTEM','{','}','AMPOUL_ANIM_EVENT')):
             pass
         else:
-            st.write(line)
+            medicine_text.append(line.strip())
+
+st.write(medicine_text)
 
 # with open('medicine_injectors.txt', 'r') as infile:
 #     injectors = infile.read()
