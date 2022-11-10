@@ -7,6 +7,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
             pass
         else:
             medicine_text += line.strip() + '\n'
+            medicine_text = medicine_text.split(' //')[0]
 
 st.write(medicine_text)
 
