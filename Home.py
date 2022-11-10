@@ -8,7 +8,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
         else:
             medicine_text += line.strip()
 
-st.write(medicine_text)
+st.write(medicine_text.split(';'))
 
 # with open('medicine_injectors.txt', 'r') as infile:
 #     injectors = infile.read()
