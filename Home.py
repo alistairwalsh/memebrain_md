@@ -1,8 +1,7 @@
 import streamlit as st
 
 with open('medicine_ampouls.txt', 'r') as infile:
-    ampouls = infile.read()
-    for line in ampouls:
+    for line in infile.readlines():
         st.write(line)
 
 # with open('medicine_injectors.txt', 'r') as infile:
