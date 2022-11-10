@@ -11,7 +11,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
         else:
             medicine_text[new_k].append(line)
 
-st.write(medicine_text.split('\n'))
+st.write(medicine_text)
 
 #for line in medicine_text:
 
