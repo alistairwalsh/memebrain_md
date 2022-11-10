@@ -9,7 +9,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
             medicine_text += line.strip() + '\n'
             medicine_text = medicine_text.split(' //')[0]
 
-st.write(medicine_text)
+st.write(medicine_text.splt('\n'))
 
 #for line in medicine_text:
 
