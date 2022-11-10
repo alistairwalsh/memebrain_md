@@ -2,6 +2,10 @@ import streamlit as st
 
 with open('medicine_ampouls.txt', 'r') as infile:
     for line in infile.readlines():
+        if line.startswith('class'):
+            line.split(' ')[1]
+        else:
+            pass
         st.write(line)
 
 # with open('medicine_injectors.txt', 'r') as infile:
