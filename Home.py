@@ -1,13 +1,15 @@
 import streamlit as st
 
 with open('medicine_ampouls.txt', 'r') as infile:
-    medicine_text = ''
+    medicine_text = {}
     for line in infile.readlines():
-        if line.strip().startswith(('class','scope','model','hiddenSelections','ITEM_DAMAGE_SYSTEM','{','}','AMPOUL_ANIM_EVENT')):
+        if line.strip().startswith(('class')):
+            new_k = line.split()[1]
+            medicine_text[new_k] = []
+        elif len(line) < 1 or line.startswith('{','}'):
             pass
         else:
-            medicine_text = medicine_text.split(' //')[0]
-            medicine_text += line.strip() + '\n'
+            medicine_text[new_k].append(line)
 
 st.write(medicine_text.split('\n'))
 
