@@ -8,7 +8,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
         else:
             medicine_text += line.strip()
 
-st.write(medicine_text.replace('"', ''))
+st.write(medicine_text,'\n')
 
 #for line in medicine_text:
 
