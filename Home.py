@@ -41,5 +41,3 @@ st.image(img)
 # with open('medicine_tablets.txt', 'r') as infile:
 #     tablets = infile.read()
 #     st.write(tablets)
-
-img = cv2.IMREAD_COLOR('images/Hematoma.png')
