@@ -3,13 +3,17 @@ import streamlit as st
 with open('medicine_ampouls.txt', 'r') as infile:
     ampule_text = {}
     for line in infile.readlines():
-        if line.strip().startswith(('class')):
-            new_k = line.split()[1].replace('Ampoule','').strip()
+        line = line.strip()
+        if line.startswith(('class')):
+            new_k = line.split()[1].replace('Ampoule','')
             ampule_text[new_k] = []
         elif len(line) < 1 or line.startswith(('{','}')):
             pass
         else:
-            ampule_text[new_k].append(line.strip())
+            if len(line) < 1:
+                pass
+            else:
+                ampule_text[new_k].append(line)
 
 st.write(ampule_text)
 
