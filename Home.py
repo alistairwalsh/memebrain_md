@@ -1,4 +1,5 @@
 import streamlit as st
+import cv2
 
 with open('medicine_ampouls.txt', 'r') as infile:
     ampule_text = {}
@@ -18,8 +19,11 @@ with open('medicine_ampouls.txt', 'r') as infile:
                     line = line.split(' //')[0]
                 ampule_text[new_k].append(line)
 
+
+
 st.write(ampule_text)
-st.image('images/Hematoma.png')
+img = cv2.IMREAD_COLOR('images/Hematoma.png')
+st.image(img)
 
 
 
@@ -37,3 +41,5 @@ st.image('images/Hematoma.png')
 # with open('medicine_tablets.txt', 'r') as infile:
 #     tablets = infile.read()
 #     st.write(tablets)
+
+img = cv2.IMREAD_COLOR('images/Hematoma.png')
