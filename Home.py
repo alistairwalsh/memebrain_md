@@ -21,7 +21,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
                 ampule_text[new_k].append(line)
 
 for k, v in ampule_text.items():
-    st.write(k, v.split(':'))
+    st.write(k, {val.split(':')[0]: val.split(':')[-1] for val in v})
 for name in glob('images/*'):
     img = cv2.imread(name)
     st.image(img, name)
