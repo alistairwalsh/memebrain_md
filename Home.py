@@ -5,6 +5,16 @@ from glob import glob
 cures = ['UseSalve', 'Stomatchheal', 'Bandage1', 'Painkiller', 'Bandage2', 'Antidepresant', 'Adrenalin', 'Antibiotic', 'Disinfected', 'Radioprotection']
 illness = []
 
+
+for filename in glob('images/*.png'):
+    name = filename.split('/')[-1].split('.')[0]
+    if name not in cures:
+        illness.append(name)
+st.write(illness)
+
+
+
+
 st.title('Illness')
 for filename in glob('images/*.png'):
     name = filename.split('/')[-1].split('.')[0]
