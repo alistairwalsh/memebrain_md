@@ -80,6 +80,12 @@ with open('medicine_ampouls.txt', 'r') as infile:
                     line = line.split(' //')[0]
                 ampule_text[new_k].append(line)
 
+# "hiddenSelections[]"
+# "hiddenSelectionsTextures[]"
+
+st.write('**************************************************************************************')
+st.write(ampule_text.keys())
+
 for k, v in ampule_text.items():
     ampule_text[k] = {val.split('=')[0]: val.split('=')[-1] for val in v}
 
