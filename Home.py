@@ -1,5 +1,6 @@
 import streamlit as st
 import cv2
+from glob import glob
 
 with open('medicine_ampouls.txt', 'r') as infile:
     ampule_text = {}
@@ -20,10 +21,10 @@ with open('medicine_ampouls.txt', 'r') as infile:
                 ampule_text[new_k].append(line)
 
 
-
+for name in glob('images/*):
+    img = cv2.imread('images/Hematoma.png')
+    st.image(img, name)
 st.write(ampule_text)
-img = cv2.imread('images/Hematoma.png')
-st.image(img)
 
 
 
