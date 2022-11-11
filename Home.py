@@ -55,16 +55,7 @@ img = image_select(
     captions=illness_names
 )
 
-#st.write(img)
 st.image(img)
-
-# st.title('Cured')
-# for filename in glob('images/*.png'):
-#     name = filename.split('/')[-1].split('.')[0]
-#     if name in cures:
-#         st.write(name)
-#         st.image(cv2.imread(filename),caption = name, width=100)
-
 
 with open('medicine_ampouls.txt', 'r') as infile:
     ampule_text = {}
@@ -87,7 +78,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
 for k, v in ampule_text.items():
     ampule_text[k] = {val.split('=')[0]: val.split('=')[-1] for val in v}
 
-#st.json(ampule_text)
+st.json(ampule_text)
 
 for k, v in ampule_text.items():
     st.header(k)
