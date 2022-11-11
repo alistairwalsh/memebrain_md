@@ -20,52 +20,6 @@ for filename in glob('images/*.png'):
         st.image(cv2.imread(filename),caption = name, width=100)
 
 
-'UseSalve', 'Stomatchheal', 'Bandage1', 'Painkiller', 'Bandage2', 'Antidepresant', 'Adrenalin', 'Antibiotic', 'Disinfected', 'Radioprotection'
-# st.write("""Hemostatic""")
-
-# st.image(cv2.imread('images/Hemostatic.png'), caption = 'Hemostatic')
-
-# st.write("""Hematopoiesis""")
-
-# st.image(cv2.imread('images/Hematopoiesis.png'), caption = 'Hematopoiesis')
-
-# st.write("""Hematoma""")
-
-# st.image(cv2.imread('images/Hematoma.png'), caption = 'Hematoma')
-
-# st.write("""pain""")
-
-# st.image(cv2.imread('images/Pain.png'), caption = 'Pain')
-
-# st.write("""Stomatchpoison""")
-
-# st.image(cv2.imread('images/Stomatchpoison.png'), caption = 'Stomatchpoison')
-
-# st.write("""Antibiotic""")
-
-# st.image(cv2.imread('images/Antibiotic.png'), caption = 'Antibiotic')
-
-# st.write("""ZVirus""")
-
-# st.image(cv2.imread('images/ZVirus.png'), caption = 'ZVirus')
-
-# st.write("""Concussion""")
-
-# st.image(cv2.imread('images/Concussion.png'), caption = 'Concussion')
-
-# st.write("""KnifeHit""")
-
-# st.image(cv2.imread('images/KnifeHit.png'), caption = 'KnifeHit')
-
-# st.write("""Bullethit""")
-
-# st.image(cv2.imread('images/Bullethit.png'), caption = 'Bullethit')
-
-
-
-
-
-
 with open('medicine_ampouls.txt', 'r') as infile:
     ampule_text = {}
     for line in infile.readlines():
