@@ -5,7 +5,7 @@ from glob import glob
 for filename in glob('images/*.png'):
     name = filename.split('/')[-1].split('.')[0]
     st.write(name)
-    st.image(cv2.imread(filename),caption = name)
+    st.image(cv2.imread(filename),caption = name, width=100)
 
 
 # st.write("""Hemostatic""")
