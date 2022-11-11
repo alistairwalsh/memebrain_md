@@ -10,7 +10,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
         elif len(line) < 1 or line.startswith(('{','}')):
             pass
         else:
-            if len(line) < 1:
+            if len(line) < 1 or line.startswith(('scope','model','hiddenSelections','ITEM_DAMAGE_SYSTEM','AMPOUL_ANIM_EVENT')):
                 pass
             else:
                 ampule_text[new_k].append(line)
