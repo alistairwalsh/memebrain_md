@@ -22,7 +22,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
 
 
 st.write(ampule_text)
-img = cv2.IMREAD_COLOR('images/Hematoma.png')
+img = cv2.imread('images/Hematoma.png')
 st.image(img)
 
 
