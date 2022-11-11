@@ -2,8 +2,50 @@ import streamlit as st
 import cv2
 from glob import glob
 
-st.write('''What is hemostasis?
-Hemostasis is your body’s normal reaction to an injury that causes bleeding. This reaction stops bleeding and allows your body to start repairs on the injury''')
+st.write("""Hemostatic""")
+
+st.image(cv2.imread('images/Hemostatic.png', 'Hemostatic'))
+
+st.write("""Hematopoiesis""")
+
+st.image(cv2.imread('images/Hematopoiesis.png', 'Hematopoiesis'))
+
+st.write("""Hematoma""")
+
+st.image(cv2.imread('images/Hematoma.png', 'Hematoma'))
+
+st.write("""pain""")
+
+st.image(cv2.imread('images/Pain.png','Pain'))
+
+st.write("""Stomatchpoison""")
+
+st.image(cv2.imread('images/Stomatchpoison.png', 'Stomatchpoison'))
+
+st.write("""Antibiotic""")
+
+st.image(cv2.imread('images/Antibiotic.png', 'Antibiotic'))
+
+st.write("""ZVirus""")
+
+st.image(cv2.imread('images/ZVirus.png', 'ZVirus'))
+
+st.write("""Concussion""")
+
+st.image(cv2.imread('images/Concussion.png', 'Concussion'))
+
+st.write("""KnifeHit""")
+
+st.image(cv2.imread('images/KnifeHit.png', 'KnifeHit'))
+
+st.write("""Bullethit""")
+
+st.image(cv2.imread('images/Bullethit.png', 'Bullethit'))
+
+
+
+
+
 
 with open('medicine_ampouls.txt', 'r') as infile:
     ampule_text = {}
