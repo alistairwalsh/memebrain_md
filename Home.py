@@ -84,7 +84,10 @@ with open('medicine_ampouls.txt', 'r') as infile:
 # "hiddenSelectionsTextures[]"
 
 st.write('**************************************************************************************')
-st.write(ampule_text['Erytromicyn'])
+st.write(ampule_text['Erytromicyn'][6].split('_')[-2])
+
+#5:"hiddenSelections[] = {zbytek}"
+#6:"hiddenSelectionsTextures[] = { SyberiaScripts\data\medical\ampoule_red_co.paa }".split('_')[-2]
 
 for k, v in ampule_text.items():
     ampule_text[k] = {val.split('=')[0]: val.split('=')[-1] for val in v}
