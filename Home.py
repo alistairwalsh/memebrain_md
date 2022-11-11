@@ -13,6 +13,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
             if len(line) < 1 or line.startswith(('scope','model','hiddenSelections','ITEM_DAMAGE_SYSTEM','AMPOUL_ANIM_EVENT')):
                 pass
             else:
+                line.replace(('"','#syb_',';'),'')
                 ampule_text[new_k].append(line)
 
 st.write(ampule_text)
