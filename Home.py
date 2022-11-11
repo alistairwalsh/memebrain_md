@@ -47,7 +47,7 @@ for filename in glob('images/*.png'):
         illness_images.append(filename)
         illness_names.append(name)
         
-
+st.write(illness_names)
 
 img = image_select(
     label="Select what ails you",
