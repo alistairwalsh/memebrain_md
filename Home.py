@@ -19,6 +19,9 @@ with open('medicine_ampouls.txt', 'r') as infile:
                 ampule_text[new_k].append(line)
 
 st.write(ampule_text)
+st.image('images\Hematoma.png')
+
+
 
 #for line in medicine_text:
 
