@@ -84,7 +84,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
 # "hiddenSelectionsTextures[]"
 
 st.write('**************************************************************************************')
-st.write(ampule_text['Erytromicyn'].items())
+st.write(ampule_text['Erytromicyn'])
 
 for k, v in ampule_text.items():
     ampule_text[k] = {val.split('=')[0]: val.split('=')[-1] for val in v}
