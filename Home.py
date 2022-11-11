@@ -2,45 +2,51 @@ import streamlit as st
 import cv2
 from glob import glob
 
-st.write("""Hemostatic""")
+for filename in glob('images/*.png'):
+    name = filename.split('/')[-1].split('.')[0]
+    st.write(name)
+    st.image(cv2.imread(filename),caption = name)
 
-st.image(cv2.imread('images/Hemostatic.png'), caption = 'Hemostatic')
 
-st.write("""Hematopoiesis""")
+# st.write("""Hemostatic""")
 
-st.image(cv2.imread('images/Hematopoiesis.png'), caption = 'Hematopoiesis')
+# st.image(cv2.imread('images/Hemostatic.png'), caption = 'Hemostatic')
 
-st.write("""Hematoma""")
+# st.write("""Hematopoiesis""")
 
-st.image(cv2.imread('images/Hematoma.png'), caption = 'Hematoma')
+# st.image(cv2.imread('images/Hematopoiesis.png'), caption = 'Hematopoiesis')
 
-st.write("""pain""")
+# st.write("""Hematoma""")
 
-st.image(cv2.imread('images/Pain.png'), caption = 'Pain')
+# st.image(cv2.imread('images/Hematoma.png'), caption = 'Hematoma')
 
-st.write("""Stomatchpoison""")
+# st.write("""pain""")
 
-st.image(cv2.imread('images/Stomatchpoison.png'), caption = 'Stomatchpoison')
+# st.image(cv2.imread('images/Pain.png'), caption = 'Pain')
 
-st.write("""Antibiotic""")
+# st.write("""Stomatchpoison""")
 
-st.image(cv2.imread('images/Antibiotic.png'), caption = 'Antibiotic')
+# st.image(cv2.imread('images/Stomatchpoison.png'), caption = 'Stomatchpoison')
 
-st.write("""ZVirus""")
+# st.write("""Antibiotic""")
 
-st.image(cv2.imread('images/ZVirus.png'), caption = 'ZVirus')
+# st.image(cv2.imread('images/Antibiotic.png'), caption = 'Antibiotic')
 
-st.write("""Concussion""")
+# st.write("""ZVirus""")
 
-st.image(cv2.imread('images/Concussion.png'), caption = 'Concussion')
+# st.image(cv2.imread('images/ZVirus.png'), caption = 'ZVirus')
 
-st.write("""KnifeHit""")
+# st.write("""Concussion""")
 
-st.image(cv2.imread('images/KnifeHit.png'), caption = 'KnifeHit')
+# st.image(cv2.imread('images/Concussion.png'), caption = 'Concussion')
 
-st.write("""Bullethit""")
+# st.write("""KnifeHit""")
 
-st.image(cv2.imread('images/Bullethit.png'), caption = 'Bullethit')
+# st.image(cv2.imread('images/KnifeHit.png'), caption = 'KnifeHit')
+
+# st.write("""Bullethit""")
+
+# st.image(cv2.imread('images/Bullethit.png'), caption = 'Bullethit')
 
 
 
