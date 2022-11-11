@@ -43,8 +43,8 @@ for k, v in ampule_text.items():
 
 st.json(ampule_text)
 
-for k, v in ampule_text:
-    for kk, vv in v:
+for k, v in ampule_text.items():
+    for kk, vv in v.items():
         if kk.startswith('med') and not kk.endswith('TimeSec'):
             st.write(k, kk, vv)
 
