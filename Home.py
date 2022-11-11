@@ -15,6 +15,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
             else:
                 for bad_char in ('"','#syb_','_name',';'):
                     line = line.replace(bad_char, '')
+                    line = line.split(' //')[0]
                 ampule_text[new_k].append(line)
 
 st.write(ampule_text)
