@@ -38,6 +38,11 @@ illness = [
   "Hemostatic"
 ]
 
+#medAntibioticLevel Influenza
+#medRemoveSepsis Sepsis
+#medRemoveZVirus ZVirus
+#medConcussionHeal Concussion
+
 st.title('Illness')
 illness_images = []
 illness_names = []
@@ -67,7 +72,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
         elif len(line) < 1 or line.startswith(('{','}')):
             pass
         else:
-            if len(line) < 1 or line.startswith(('scope','model','hiddenSelections','ITEM_DAMAGE_SYSTEM','AMPOUL_ANIM_EVENT')):
+            if len(line) < 1 or line.startswith(('scope','model','ITEM_DAMAGE_SYSTEM','AMPOUL_ANIM_EVENT')):
                 pass
             else:
                 for bad_char in ('"','#syb_','_name',';'):
@@ -85,7 +90,7 @@ for k, v in ampule_text.items():
     for kk, vv in v.items():
         if kk.startswith('med') and not kk.endswith('TimeSec') and not kk.startswith('overdosed') and not kk.endswith('Strength'):
             kk = kk.replace('med','').replace('Level','')
-            st.write( f" type: {kk}")
+            st.write( f"type: {kk}")
             st.write(f"strength: {vv}")
 
 #st.write(ampule_text)

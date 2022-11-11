@@ -1,0 +1,5 @@
+https://docs.google.com/spreadsheets/d/1TNKcG0o3VPBvFjsLZXZ5blDWXmXcP37CXvErSwPYqio/edit#gid=0
+
+google sheet of info
+
+Want to be able to select an illness and get a list of cures as well as search for a medicine name and show what it treats
