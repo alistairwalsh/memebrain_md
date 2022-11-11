@@ -21,7 +21,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
                 ampule_text[new_k].append(line)
 
 
-for name in glob('images/*):
+for name in glob('images/*'):
     img = cv2.imread('images/Hematoma.png')
     st.image(img, name)
 st.write(ampule_text)
