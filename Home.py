@@ -2,18 +2,34 @@ import streamlit as st
 import cv2
 from glob import glob
 
-cures = ['UseSalve', 'Stomatchheal', 'Bandage1', 'Painkiller', 'Bandage2', 'Antidepresant', 'Adrenalin', 'Antibiotic', 'Disinfected', 'Radioprotection']
-illness = []
+cures = [
+    'UseSalve', 
+    'Stomatchheal', 
+    'Bandage1', 
+    'Painkiller', 
+    'Bandage2', 
+    'Antidepresant', 
+    'Adrenalin', 
+    'Antibiotic', 
+    'Disinfected', 
+    'Radioprotection']
 
-
-for filename in glob('images/*.png'):
-    name = filename.split('/')[-1].split('.')[0]
-    if name not in cures:
-        illness.append(name)
-st.write(illness)
-
-
-
+illness = [
+  "Influenza",
+  "RadiationSickness",
+  "Pain",
+  "Hematopoiesis",
+  "ZVirus",
+  "Sepsis",
+  "Hematoma",
+  "Concussion",
+  "Stomatchpoison",
+  "VisceraDamage",
+  "Bullethit",
+  "KnifeHit",
+  "Overdosed",
+  "Hemostatic"
+]
 
 st.title('Illness')
 for filename in glob('images/*.png'):
@@ -22,12 +38,12 @@ for filename in glob('images/*.png'):
         st.write(name)
         st.image(cv2.imread(filename),caption = name, width=100)
 
-st.title('Cured')
-for filename in glob('images/*.png'):
-    name = filename.split('/')[-1].split('.')[0]
-    if name in cures:
-        st.write(name)
-        st.image(cv2.imread(filename),caption = name, width=100)
+# st.title('Cured')
+# for filename in glob('images/*.png'):
+#     name = filename.split('/')[-1].split('.')[0]
+#     if name in cures:
+#         st.write(name)
+#         st.image(cv2.imread(filename),caption = name, width=100)
 
 
 with open('medicine_ampouls.txt', 'r') as infile:
@@ -51,12 +67,12 @@ with open('medicine_ampouls.txt', 'r') as infile:
 for k, v in ampule_text.items():
     ampule_text[k] = {val.split('=')[0]: val.split('=')[-1] for val in v}
 
-st.json(ampule_text)
+#st.json(ampule_text)
 
 for k, v in ampule_text.items():
     st.header(k)
     for kk, vv in v.items():
-        if kk.startswith('med') and not kk.endswith('TimeSec'):
+        if kk.startswith('med') and not kk.endswith('TimeSec') and not kk.startswith('overdosed') and not kk.endswith('Strength'):
             kk = kk.replace('med','').replace('Level','')
             st.write( f" type: {kk}")
             st.write(f"strength: {vv}")
