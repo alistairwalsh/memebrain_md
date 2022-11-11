@@ -55,7 +55,7 @@ img = image_select(
     captions=illness_names
 )
 
-st.write(img)
+#st.write(img)
 st.image(img)
 
 # st.title('Cured')
