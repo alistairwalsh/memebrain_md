@@ -9,7 +9,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
         elif len(line) < 1 or line.startswith(('{','}')):
             pass
         else:
-            ampule_text[new_k].append(line)
+            ampule_text[new_k].append(line.strip())
 
 st.write(ampule_text)
 
