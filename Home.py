@@ -2,6 +2,9 @@ import streamlit as st
 import cv2
 from glob import glob
 
+st.write('''What is hemostasis?
+Hemostasis is your body’s normal reaction to an injury that causes bleeding. This reaction stops bleeding and allows your body to start repairs on the injury''')
+
 with open('medicine_ampouls.txt', 'r') as infile:
     ampule_text = {}
     for line in infile.readlines():
