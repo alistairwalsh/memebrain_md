@@ -48,7 +48,8 @@ for k, v in ampule_text.items():
     for kk, vv in v.items():
         if kk.startswith('med') and not kk.endswith('TimeSec'):
             kk = kk.replace('med','').replace('Level','')
-            st.write( f" type: {kk} \nstrength: {vv}")
+            st.write( f" type: {kk}")
+            st.write(f"strength: {vv}")
 
 #st.write(ampule_text)
 
