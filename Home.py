@@ -37,7 +37,7 @@ dict_ill_2_cure = {
 "Hematopoiesis":"medBloodHematopoiesis",
 "ZVirus":"medRemoveZVirus",
 "Sepsis":"medRemoveSepsis",
-"Hematoma":'',
+"Hematoma":"medHematomaHeal",
 "Concussion":"medConcussionHeal",
 "Stomatchpoison":"medStomatchhealLevel",
 "VisceraDamage":'',
@@ -68,6 +68,8 @@ for i in x:
 option = st.selectbox(label = 'Select your illness', options = illness_names)
 
 st.write('you have', option)
+
+st.write('you should do',dict_ill_2_cure[option])
 
 @st.experimental_singleton
 def get_text(filename):
