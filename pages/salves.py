@@ -1,8 +1,4 @@
 import streamlit as st
-from streamlit_image_select import image_select
-import cv2
-from glob import glob
-
 
 @st.experimental_singleton
 def get_text(filename):
@@ -10,7 +6,7 @@ def get_text(filename):
         in_text = {}
         text = infile.read()
 
-    in_text = {k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n')]} # split on newline, split on '{' then split on ';'
+    in_text = {k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n') if len(l) > 0 ]} # split on newline, split on '{' then split on ';'
 
     clean_text = {}
 
