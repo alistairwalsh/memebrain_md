@@ -17,7 +17,7 @@ def get_text(filename):
     st.write(in_text)
 
     for k, v in in_text.items():
-        clean_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v] if kkk.strip() not in ("model","hiddenSelections[]",)}
+        clean_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v] if '=' in kkk and kkk.strip() not in ("model","hiddenSelections[]",)}
 
     for k, v in clean_text.items():
         if "hiddenSelectionsTextures[]" in clean_text[k].keys():
