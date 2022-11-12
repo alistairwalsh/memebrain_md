@@ -28,6 +28,8 @@ for filename in glob('images/*.png'):
         illness_images.append(filename)
         illness_names.append(name)
 
+st.write(illness_names)
+
 # Yield successive n-sized
 # chunks from l.
 def divide_chunks(l, n):
