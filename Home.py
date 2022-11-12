@@ -99,9 +99,11 @@ clean_salve_text = get_text('medicine_salves.txt')
 
 clean_tablet_text = get_text('medicine_tablets.txt')
 
+
+
 for med_type in [clean_injectors_text,clean_ampules_text,clean_salve_text,clean_tablet_text]:
     for med_type_k, med_type_v in med_type.items():
-        st.write(med_type_k, [k for k in med_type[med_type_k].keys() if k.startswith('med')])
+        st.write(med_type_k, [k for k in med_type[med_type_k].keys() if k == dict_ill_2_cure[option]])
 
 
 st.json(clean_tablet_text)
