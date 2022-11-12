@@ -86,7 +86,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
 st.write('**************************************************************************************')
 #st.json({'colour': ampule_text['Erytromicyn'][6].split('_')[-2]})
 
-st.json({k:v[-1].split('\\')[-1][:-2] for k, v in ampule_text.items()})#
+st.json({k:v[-1].split('\\')[-1][:-6] for k, v in ampule_text.items()})#
 #5:"hiddenSelections[] = {zbytek}"
 #6:"hiddenSelectionsTextures[] = { SyberiaScripts\data\medical\ampoule_red_co.paa }".split('_')[-2]
 
