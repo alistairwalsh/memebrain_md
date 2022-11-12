@@ -46,11 +46,6 @@ illness = [
 #medConcussionHeal Concussion
 
 
-lst = range(1,5)
-st.write(list(itertools.chain.from_iterable(itertools.repeat(x, 3) for x in lst)))
-
-
-
 st.title('Illness')
 illness_images = []
 illness_names = []
@@ -60,7 +55,8 @@ for filename in glob('images/*.png'):
         illness_images.append(filename)
         illness_names.append(name)
 
-st.write(len(illness_images)//4)
+st.write((len(illness_images)//4) + 1)
+st.write({k:v for k,v in enumerate(illness_images)})
 
 
 st.write(illness_names)
