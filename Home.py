@@ -71,10 +71,11 @@ def divide_chunks(l, n):
 n = 4
  
 x = list(divide_chunks([(i,ii) for i,ii in zip(illness_images,illness_names)], n))
-st.write(x)
+
 
 for i in x:
-    st.write(i)
+    for ii in i:
+        st.write(ii)
 
 for i,n in zip(illness_images, illness_names):
     st.image(cv2.imread(i), caption = n)
