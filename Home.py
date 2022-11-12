@@ -70,7 +70,7 @@ def divide_chunks(l, n):
 # list should have
 n = 4
  
-x = list(divide_chunks(zip(illness_images,illness_names), n))
+x = list(divide_chunks([(i,ii) for i,ii in zip(illness_images,illness_names)], n))
 st.write (x)
 
 for i,n in zip(illness_images, illness_names):
