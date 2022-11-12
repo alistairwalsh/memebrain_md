@@ -78,6 +78,10 @@ clean_salve_text = get_text('medicine_salves.txt')
 
 clean_tablet_text = get_text('medicine_tablets.txt')
 
+for med_type in [clean_injectors_text,clean_ampules_text,clean_salve_text,clean_tablet_text]:
+    for med_type_ind in med_type:
+        st.write(med_type_ind.keys())
+
 
 st.json(clean_tablet_text)
 # st.write(illness_names)
