@@ -25,7 +25,7 @@ def get_text(filename):
     return clean_text
 
 clean_injectors_text = get_text('medicine_injectors.txt')
-st.json(clean_salve_text)
+st.json(clean_injectors_text)
 #st.write(injector_text)
 
     # for line in infile.readlines():
