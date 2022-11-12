@@ -10,7 +10,7 @@ def get_text(filename):
         in_text = {}
         text = infile.read()
 
-    in_text = {k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text.split('\n\n')]}
+    in_text = {k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n')]}
 
     clean_text = {}
 
