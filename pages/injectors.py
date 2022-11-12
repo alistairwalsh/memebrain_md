@@ -7,7 +7,7 @@ with open('medicine_injectors.txt', 'r') as infile:
     injector_text = {}
     text = infile.read()
 
-st.write(text.split('\n'))
+st.write(text.split('\n\n'))
 
     # for line in infile.readlines():
     #     line = line.strip()
