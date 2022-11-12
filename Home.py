@@ -90,6 +90,9 @@ ampule_colour = {k:v[-1].split('\\')[-1][:-6] for k, v in ampule_text.items()}
 
 st.json(ampule_colour)
 
+for k,v in ampule_colour.items():
+    st.write(k, v)
+
 #
 #5:"hiddenSelections[] = {zbytek}"
 #6:"hiddenSelectionsTextures[] = { SyberiaScripts\data\medical\ampoule_red_co.paa }".split('_')[-2]
