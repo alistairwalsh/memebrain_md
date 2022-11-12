@@ -91,7 +91,7 @@ ampule_colour = {k:v[-1].split('\\')[-1][:-6] for k, v in ampule_text.items()}
 st.json(ampule_colour)
 
 for k,v in ampule_colour.items():
-    st.write(k, v)
+    st.write(ampule_text[k]['displayName'], v)
 
 #
 #5:"hiddenSelections[] = {zbytek}"
