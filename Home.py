@@ -60,7 +60,7 @@ for i,n in zip(illness_images, illness_names):
     clicked = st.button(key = n, label = n)
 
 
-st.write(clicked)
+st.write(st.session_state[n])
 # st.write(illness_names)
 # st.write(illness_images)
 
