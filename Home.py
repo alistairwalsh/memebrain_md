@@ -30,20 +30,20 @@ for filename in glob('images/*.png'):
 
 st.write(illness_names)
 
-{
+dict_ill_2_cure = {
 "Influenza":"medAntibioticLevel",
 "RadiationSickness":"medRadioprotectionLevel",
 "Pain":"medPainkillerLevel",
 "Hematopoiesis":"medBloodHematopoiesis",
 "ZVirus":"medRemoveZVirus",
 "Sepsis":"medRemoveSepsis",
-"Hematoma":,
+"Hematoma":'',
 "Concussion":"medConcussionHeal",
 "Stomatchpoison":"medStomatchhealLevel",
-"VisceraDamage":,
-"Bullethit":,
-"KnifeHit":,
-"Overdosed":
+"VisceraDamage":'',
+"Bullethit":'',
+"KnifeHit":'',
+"Overdosed":''
 }
 
 
