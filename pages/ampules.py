@@ -24,5 +24,5 @@ def get_text(filename):
 
     return clean_text
 
-clean_ampules_text = get_text('medicine_ampules.txt')
+clean_ampules_text = get_text('medicine_ampouls.txt')
 st.json(clean_salve_text)
