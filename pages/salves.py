@@ -10,9 +10,11 @@ def get_text(filename):
         in_text = {}
         text = infile.read()
 
-    in_text = {k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n')]}
+    in_text = {k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text.split('\n\n')]}
 
     clean_text = {}
+
+    st.write(intext)
 
     for k, v in in_text.items():
         clean_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v] if kkk.strip() not in ("model","hiddenSelections[]",)}
