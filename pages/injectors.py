@@ -12,7 +12,7 @@ injector_text = {k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text
 clean_injector_text = {}
 
 for k, v in injector_text.items():
-    clean_injector_text[k.split(' ')[1]] = {kkk.strip().replace('"',''):vvv.strip().replace('"','') for kkk,vvv in [vv.split('=') for vv in v] if kkk.strip() not in ("model","hiddenSelections[]",)}
+    clean_injector_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').replace('}','').strip() for kkk,vvv in [vv.split('=') for vv in v] if kkk.strip() not in ("model","hiddenSelections[]",)}
 
 for k, v in clean_injector_text.items():
     clean_injector_text[k]['colour'] = clean_injector_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','')
