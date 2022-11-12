@@ -19,7 +19,9 @@ cures = [
     'Adrenalin', 
     'Antibiotic', 
     'Disinfected', 
-    'Radioprotection']
+    'Radioprotection',
+    "Hemostatic"
+    ]
 
 illness = [
   "Influenza",
@@ -35,8 +37,7 @@ illness = [
   "Bullethit",
   "KnifeHit",
   "Overdosed",
-  "Hemostatic"
-]
+  ]
 
 #medAntibioticLevel Influenza
 #medRemoveSepsis Sepsis
