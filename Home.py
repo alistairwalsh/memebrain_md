@@ -121,6 +121,20 @@ st.header('Injectors')
 
 st.write(injectors)
 
+st.header('Ampules')
+
+st.write(ampules)
+
+st.header('Salves')
+
+st.write(salves)
+
+st.header('Tablets')
+
+st.write(tablets)
+
+
+
 
 
 # st.write(illness_names)
