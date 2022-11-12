@@ -8,7 +8,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
         in_text = {}
         text = infile.read()
 
-st.write(text.split('\n\n'))
+st.write([l.split('{', 1) for l in text.split('\n\n')])
 
 # @st.experimental_singleton
 # def get_text(filename):
