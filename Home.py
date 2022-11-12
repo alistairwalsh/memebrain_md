@@ -75,7 +75,7 @@ x = list(divide_chunks([(i,ii) for i,ii in zip(illness_images,illness_names)], n
 
 for i in x:
     for ii in i:
-        st.write(ii)
+        st.write(ii, i)
 
 for i,n in zip(illness_images, illness_names):
     st.image(cv2.imread(i), caption = n)
