@@ -60,5 +60,5 @@ img = image_select(
     images=[cv2.imread(filename) for filename in illness_images],
     captions=illness_names
 )
-
+st.write(img)
 st.image(img)
