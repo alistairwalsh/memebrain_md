@@ -5,9 +5,9 @@ from glob import glob
 
 with open('medicine_injectors.txt', 'r') as infile:
     injector_text = {}
-    st.json(infile.read())
+    text = infile.read()
 
-
+st.write(text)
 
     # for line in infile.readlines():
     #     line = line.strip()
