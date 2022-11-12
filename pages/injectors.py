@@ -7,7 +7,7 @@ with open('medicine_injectors.txt', 'r') as infile:
     injector_text = {}
     text = infile.read()
 
-st.write({k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n')]})
+st.write({k:v.split(';')[:-3] for k, v in [l.split('{', 1) for l in text.split('\n\n')]})
 
     # for line in infile.readlines():
     #     line = line.strip()
