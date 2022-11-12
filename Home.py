@@ -55,15 +55,15 @@ for filename in glob('images/*.png'):
         illness_images.append(filename)
         illness_names.append(name)
 
-for k,v in {k:v for k,v in enumerate(illness_images)}.items():
+for k,v in {k:v for k,v in enumerate(zip(illness_images, illness_names))}.items():
     if k < 4:
-        st.write(k, '-0')
+        st.write(k, v,  '-0')
     elif  k > 3 and k < 8 :
-        st.write(k, '-4')
+        st.write(k, v, '-4')
     elif k > 7 and k < 12:
-        st.write(k, '-8')
+        st.write(k, v, '-8')
     else:
-        st.write(k, '-12')
+        st.write(k, v, '-12')
 
 
 st.write()
