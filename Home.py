@@ -77,7 +77,7 @@ st.write('length of x', len(x))
 cols = st.columns(4)
 for c,i in zip(cols,x):
     for ii in i:
-        c.image(cv2.imread(ii[0], caption = ii[-1]))
+        c.image(cv2.imread(ii[0]), caption = ii[-1])
 
 for i,n in zip(illness_images, illness_names):
     st.image(cv2.imread(i), caption = n)
