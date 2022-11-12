@@ -7,7 +7,7 @@ from glob import glob
 @st.experimental_singleton
 def get_text(filename):
     with open(filename, 'r') as infile:
-        injector_text = {}
+        in_text = {}
         text = infile.read()
 
     in_text = {k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text.split('\n\n')]}
@@ -19,9 +19,9 @@ def get_text(filename):
 
     for k, v in clean_text.items():
         clean_text[k]['colour'] = clean_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
-        del clean_iclean_textnjector_text[k]["hiddenSelectionsTextures[]"]
+        del clean_text[k]["hiddenSelectionsTextures[]"]
 
     return clean_text
 
 clean_tablet_text = get_text('medicine_tablets.txt')
-st.json(clean_injector_text)
+st.json(clean_tablet_text)
