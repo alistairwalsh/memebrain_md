@@ -4,48 +4,6 @@ import cv2
 from glob import glob
 import itertools
 
-# Hematopoiesis (pronounced “heh-ma-tuh-poy-EE-sus”) is blood cell production
-# Hemostasis refers to normal blood clotting in response to an injury
-# HemologicShock (Hypovolemic shock) is an emergency condition in which severe blood or other fluid loss makes the heart unable to pump enough blood to the body.
-# Hematoma is a bad bruise. It happens when an injury causes blood to collect and pool under the skin.
-# Visceral injuries are injuries to all internal organs
-
-cures = [
-    'UseSalve', 
-    'Stomatchheal', 
-    'Bandage1', 
-    'Painkiller', 
-    'Bandage2', 
-    'Antidepresant', 
-    'Adrenalin', 
-    'Antibiotic', 
-    'Disinfected', 
-    'Radioprotection',
-    "Hemostatic"
-    ]
-
-illness = [
-  "Influenza",
-  "RadiationSickness",
-  "Pain",
-  "Hematopoiesis",
-  "ZVirus",
-  "Sepsis",
-  "Hematoma",
-  "Concussion",
-  "Stomatchpoison",
-  "VisceraDamage",
-  "Bullethit",
-  "KnifeHit",
-  "Overdosed",
-  ]
-
-#medAntibioticLevel Influenza
-#medRemoveSepsis Sepsis
-#medRemoveZVirus ZVirus
-#medConcussionHeal Concussion
-
-
 st.title('Illness')
 illness_images = []
 illness_names = []
@@ -55,13 +13,9 @@ for filename in glob('images/*.png'):
         illness_images.append(filename)
         illness_names.append(name)
 
-cols = st.columns(4)
-
- 
 # Yield successive n-sized
 # chunks from l.
 def divide_chunks(l, n):
-     
     # looping till length l
     for i in range(0, len(l), n):
         yield l[i:i + n]
@@ -80,6 +34,96 @@ for i in x:
 option = st.selectbox(label = 'Select your illness', options = illness_names)
 
 st.write('you have', option)
+
+@st.experimental_singleton
+def get_text(filename):
+    with open(filename, 'r') as infile:
+        in_text = {}
+        text = infile.read()
+
+    in_text = {k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n') if len(l) > 0 ]} # split on newline, split on '{' then split on ';'
+
+    clean_text = {}
+
+    for k, v in in_text.items():
+        clean_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v if '=' in vv] if kkk.strip() not in ("model","hiddenSelections[]","scope","varQuantityInit","varQuantityMax")}
+
+    for k, v in clean_text.items():
+        if "hiddenSelectionsTextures[]" in clean_text[k].keys():
+            clean_text[k]['colour'] = clean_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
+            del clean_text[k]["hiddenSelectionsTextures[]"]
+
+    return clean_text
+
+clean_injectors_text = get_text('medicine_injectors.txt')
+
+@st.experimental_singleton
+def get_text(filename):
+    with open(filename, 'r') as infile:
+        in_text = {}
+        text = infile.read()
+
+    in_text = {k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n') if len(l) > 0 ]} # split on newline, split on '{' then split on ';'
+
+    clean_text = {}
+
+    for k, v in in_text.items():
+        clean_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v if '=' in vv] if kkk.strip() not in ("model","hiddenSelections[]","scope","varQuantityInit","varQuantityMax")}
+
+    for k, v in clean_text.items():
+        if "hiddenSelectionsTextures[]" in clean_text[k].keys():
+            clean_text[k]['colour'] = clean_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
+            del clean_text[k]["hiddenSelectionsTextures[]"]
+
+    return clean_text
+
+clean_ampules_text = get_text('medicine_ampouls.txt')
+
+@st.experimental_singleton
+def get_text(filename):
+    with open(filename, 'r') as infile:
+        in_text = {}
+        text = infile.read()
+
+    in_text = {k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n') if len(l) > 0 ]} # split on newline, split on '{' then split on ';'
+
+    clean_text = {}
+
+    for k, v in in_text.items():
+        clean_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v if '=' in vv] if kkk.strip() not in ("model","hiddenSelections[]","scope","varQuantityInit","varQuantityMax")}
+
+    for k, v in clean_text.items():
+        if "hiddenSelectionsTextures[]" in clean_text[k].keys():
+            clean_text[k]['colour'] = clean_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
+            del clean_text[k]["hiddenSelectionsTextures[]"]
+
+    return clean_text
+
+clean_salve_text = get_text('medicine_salves.txt')
+
+@st.experimental_singleton
+def get_text(filename):
+    with open(filename, 'r') as infile:
+        in_text = {}
+        text = infile.read()
+
+    in_text = {k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n') if len(l) > 0 ]} # split on newline, split on '{' then split on ';'
+
+    clean_text = {}
+
+    for k, v in in_text.items():
+        clean_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v if '=' in vv] if kkk.strip() not in ("model","hiddenSelections[]","scope","varQuantityInit","varQuantityMax")}
+
+    for k, v in clean_text.items():
+        if "hiddenSelectionsTextures[]" in clean_text[k].keys():
+            clean_text[k]['colour'] = clean_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
+            del clean_text[k]["hiddenSelectionsTextures[]"]
+
+    return clean_text
+clean_tablet_text = get_text('medicine_tablets.txt')
+
+
+st.json(clean_tablet_text)
 # st.write(illness_names)
 # st.write(illness_images)
 
@@ -90,3 +134,44 @@ st.write('you have', option)
 # )
 # st.write(img)
 # st.image(img)
+
+# Hematopoiesis (pronounced “heh-ma-tuh-poy-EE-sus”) is blood cell production
+# Hemostasis refers to normal blood clotting in response to an injury
+# HemologicShock (Hypovolemic shock) is an emergency condition in which severe blood or other fluid loss makes the heart unable to pump enough blood to the body.
+# Hematoma is a bad bruise. It happens when an injury causes blood to collect and pool under the skin.
+# Visceral injuries are injuries to all internal organs
+
+# cures = [
+#     'UseSalve', 
+#     'Stomatchheal', 
+#     'Bandage1', 
+#     'Painkiller', 
+#     'Bandage2', 
+#     'Antidepresant', 
+#     'Adrenalin', 
+#     'Antibiotic', 
+#     'Disinfected', 
+#     'Radioprotection',
+#     "Hemostatic"
+#     ]
+
+# illness = [
+#   "Influenza",
+#   "RadiationSickness",
+#   "Pain",
+#   "Hematopoiesis",
+#   "ZVirus",
+#   "Sepsis",
+#   "Hematoma",
+#   "Concussion",
+#   "Stomatchpoison",
+#   "VisceraDamage",
+#   "Bullethit",
+#   "KnifeHit",
+#   "Overdosed",
+#   ]
+
+#medAntibioticLevel Influenza
+#medRemoveSepsis Sepsis
+#medRemoveZVirus ZVirus
+#medConcussionHeal Concussion
