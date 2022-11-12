@@ -8,7 +8,7 @@ with open('medicine_ampouls.txt', 'r') as infile:
         in_text = {}
         text = infile.read()
 
-st.write(in_text)
+st.write(text)
 
 # @st.experimental_singleton
 # def get_text(filename):
