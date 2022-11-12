@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_image_select import image_select
 import cv2
 from glob import glob
-from itertools import cycle
+import itertools
 
 # Hematopoiesis (pronounced “heh-ma-tuh-poy-EE-sus”) is blood cell production
 # Hemostasis refers to normal blood clotting in response to an injury
@@ -46,6 +46,8 @@ illness = [
 #medConcussionHeal Concussion
 
 
+lst = range(1,5)
+st.write(list(itertools.chain.from_iterable(itertools.repeat(x, 3) for x in lst)))
 
 
 
@@ -58,11 +60,7 @@ for filename in glob('images/*.png'):
         illness_images.append(filename)
         illness_names.append(name)
 
-cols = st.columns(4)
 
-zip_list = zip(illness_images, cycle(cols)) if len(illness_images) > len(cols) else zip(cycle(illness_images), cols)
-
-st.write({i:c for i,c in zip_list})
 
 
 st.write(illness_names)
