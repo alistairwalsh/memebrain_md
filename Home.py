@@ -55,12 +55,11 @@ for filename in glob('images/*.png'):
         illness_images.append(filename)
         illness_names.append(name)
 
-st.write((len(illness_images)//4) + 1)
 st.write({k:v for k,v in enumerate(illness_images)})
 
 
-st.write(illness_names)
-st.write(illness_images)
+# st.write(illness_names)
+# st.write(illness_images)
 
 # img = image_select(
 #     label="Select what ails you",
