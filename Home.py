@@ -98,14 +98,14 @@ clean_salve_text = get_text('medicine_salves.txt')
 
 clean_tablet_text = get_text('medicine_tablets.txt')
 
-
+cures = {}
 
 for med_type in [clean_injectors_text,clean_ampules_text,clean_salve_text,clean_tablet_text]:
     for med_type_k, med_type_v in med_type.items():
         treatments = [k for k in med_type[med_type_k].keys() if k == dict_ill_2_cure[option]]
         if treatments:
             r = re.findall('([A-Z][a-z]+)', med_type_k)
-            st.write(f'Type:{r[0]}, Name:{r[1]}','Colour:', med_type[med_type_k]['colour'].split('_')[-2])
+            st.write(f'Type:{r[0]}, Name:{r[1]}','Colour:', med_type[med_type_k]['colour'].split('_')[-2],'Strength:',med_type[med_type_k][dict_ill_2_cure[option]] )
 
 
 # st.write(illness_names)
