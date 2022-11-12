@@ -14,8 +14,6 @@ def get_text(filename):
 
     clean_text = {}
 
-    st.write(in_text)
-
     for k, v in in_text.items():
         clean_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v if '=' in vv] if kkk.strip() not in ("model","hiddenSelections[]","scope","varQuantityInit","varQuantityMax")}
 
