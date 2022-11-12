@@ -103,7 +103,7 @@ for med_type in [clean_injectors_text,clean_ampules_text,clean_salve_text,clean_
     for med_type_k, med_type_v in med_type.items():
         treatments = [k for k in med_type[med_type_k].keys() if k == dict_ill_2_cure[option]]
         if treatments:
-            st.write(med_type_k, med_type[med_type_k]['colour'])
+            st.write(med_type[med_type_k]['displayName'], med_type[med_type_k]['colour'])
 
 
 # st.write(illness_names)
