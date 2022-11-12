@@ -10,18 +10,18 @@ def get_text(filename):
         injector_text = {}
         text = infile.read()
 
-    injector_text = {k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text.split('\n\n')]}
+    in_text = {k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text.split('\n\n')]}
 
-    clean_injector_text = {}
+    clean_text = {}
 
-    for k, v in injector_text.items():
-        clean_injector_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v] if kkk.strip() not in ("model","hiddenSelections[]",)}
+    for k, v in in_text.items():
+        clean_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v] if kkk.strip() not in ("model","hiddenSelections[]",)}
 
-    for k, v in clean_injector_text.items():
-        clean_injector_text[k]['colour'] = clean_injector_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
-        del clean_injector_text[k]["hiddenSelectionsTextures[]"]
+    for k, v in clean_text.items():
+        clean_text[k]['colour'] = clean_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
+        del clean_text[k]["hiddenSelectionsTextures[]"]
 
-    return clean_injector_text
+    return clean_text
 
 clean_injector_text = get_text('medicine_injectors.txt')
 st.json(clean_injector_text)
