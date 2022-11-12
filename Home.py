@@ -58,9 +58,9 @@ for filename in glob('images/*.png'):
 for k,v in {k:v for k,v in enumerate(illness_images)}.items():
     if k < 4:
         st.write(k)
-    elif k > 3:
+    elif  7 < k > 3 :
         st.write(k, '-4')
-    elif k > 7:
+    elif 12 < k > 7:
         st.write(k, '-8')
     else:
         st.write(k, '-12')
