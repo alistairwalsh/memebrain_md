@@ -30,6 +30,23 @@ for filename in glob('images/*.png'):
 
 st.write(illness_names)
 
+{
+"Influenza":"medAntibioticLevel",
+"RadiationSickness":"medRadioprotectionLevel",
+"Pain":"medPainkillerLevel",
+"Hematopoiesis":"medBloodHematopoiesis",
+"ZVirus":"medRemoveZVirus",
+"Sepsis":"medRemoveSepsis",
+"Hematoma":,
+"Concussion":"medConcussionHeal",
+"Stomatchpoison":"medStomatchhealLevel",
+"VisceraDamage":,
+"Bullethit":,
+"KnifeHit":,
+"Overdosed":
+}
+
+
 # Yield successive n-sized
 # chunks from l.
 def divide_chunks(l, n):
@@ -82,7 +99,7 @@ clean_tablet_text = get_text('medicine_tablets.txt')
 
 for med_type in [clean_injectors_text,clean_ampules_text,clean_salve_text,clean_tablet_text]:
     for med_type_k, med_type_v in med_type.items():
-        st.write(med_type_k, [k for k in clean_injectors_text[med_type_k].keys() if k.startswith('med')])
+        st.write(med_type_k, [k for k in med_type[med_type_k].keys() if k.startswith('med')])
 
 
 st.json(clean_tablet_text)
