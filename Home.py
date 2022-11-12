@@ -72,9 +72,10 @@ n = 4
  
 x = list(divide_chunks([(i,ii) for i,ii in zip(illness_images,illness_names)], n))
 
-
+st.write('length of x', len(x))
 for i in x:
     for ii in i:
+
         st.write(ii, i)
 
 for i,n in zip(illness_images, illness_names):
