@@ -73,10 +73,11 @@ n = 4
 x = list(divide_chunks([(i,ii) for i,ii in zip(illness_images,illness_names)], n))
 
 st.write('length of x', len(x))
-for i in x:
-    for ii in i:
 
-        st.write(ii, i)
+cols = st.columns(4)
+for c,i in zip(cols,x):
+    for ii in i:
+        c.image(cv2.imread(ii[0], caption(ii[-1])))
 
 for i,n in zip(illness_images, illness_names):
     st.image(cv2.imread(i), caption = n)
