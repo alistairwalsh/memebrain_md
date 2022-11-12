@@ -62,7 +62,7 @@ cols = st.columns(4)
 
 zip_list = zip(illness_images, cycle(cols)) if len(illness_images) > len(cols) else zip(cycle(illness_images), cols)
 
-st.write(zip_list)
+st.write({i:c for i,c in zip_list})
 
 
 st.write(illness_names)
