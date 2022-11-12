@@ -68,11 +68,11 @@ def divide_chunks(l, n):
  
 # How many elements each
 # list should have
-n = 4
+n = 5
  
 x = list(divide_chunks([(i,ii) for i,ii in zip(illness_images,illness_names)], n))
 
-cols = st.columns(4)
+cols = st.columns(5)
 for c,i in zip(cols,x):
     for ii in i:
         c.image(cv2.imread(ii[0]), caption = ii[-1],use_column_width = 'always')
