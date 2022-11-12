@@ -80,7 +80,7 @@ clean_tablet_text = get_text('medicine_tablets.txt')
 
 for med_type in [clean_injectors_text,clean_ampules_text,clean_salve_text,clean_tablet_text]:
     for med_type_k, med_type_v in med_type.items():
-        st.write([k for k in clean_injectors_text[med_type_k].keys() if k.contains('Level')])
+        st.write([k for k in clean_injectors_text[med_type_k].keys() if k.endswith('Level')])
 
 
 st.json(clean_tablet_text)
