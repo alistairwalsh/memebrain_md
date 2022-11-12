@@ -11,7 +11,7 @@ def get_text(filename):
         text = infile.read()
 
     in_text = {k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n')]} # split on newline, split on '{' then split on ';'
-
+    st.json(in_text)
     clean_text = {}
 
     for k, v in in_text.items():
