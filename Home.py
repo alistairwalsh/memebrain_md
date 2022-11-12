@@ -100,12 +100,27 @@ clean_tablet_text = get_text('medicine_tablets.txt')
 
 cures = {}
 
-for med_type in [clean_injectors_text,clean_ampules_text,clean_salve_text,clean_tablet_text]:
-    for med_type_k, med_type_v in med_type.items():
-        treatments = [k for k in med_type[med_type_k].keys() if k == dict_ill_2_cure[option]]
+
+
+def get_relevant(text_dict):    
+    for med_type_k, med_type_v in text_dict.items():
+        treatments = [k for k in text_dict[med_type_k].keys() if k == dict_ill_2_cure[option]]
         if treatments:
             r = re.findall('([A-Z][a-z]+)', med_type_k)
-            st.write(f'Type:{r[0]}, Name:{r[1]}','Colour:', med_type[med_type_k]['colour'].split('_')[-2],'Strength:',med_type[med_type_k][dict_ill_2_cure[option]] )
+            return r[0], r[1], text_dict[med_type_k]['colour'].split('_')[-2], text_dict[med_type_k][dict_ill_2_cure[option]]
+
+injectors = get_relevant(clean_injectors_text)
+
+ampules = get_relevant(clean_ampules_text) 
+
+salves = get_relevant(clean_salve_text) 
+
+tablets = get_relevant(clean_tablet_text) 
+
+st.header('Injectors')
+
+st.write(injectors)
+
 
 
 # st.write(illness_names)
