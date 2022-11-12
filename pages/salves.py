@@ -20,7 +20,7 @@ def get_text(filename):
         clean_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v] if kkk.strip() not in ("model","hiddenSelections[]",)}
 
     for k, v in clean_text.items():
-        if "hiddenSelectionsTextures[]" in if clean_text[k].keys():
+        if "hiddenSelectionsTextures[]" in clean_text[k].keys():
             clean_text[k]['colour'] = clean_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
             del clean_text[k]["hiddenSelectionsTextures[]"]
 
