@@ -16,6 +16,7 @@ for k, v in injector_text.items():
 
 for k, v in clean_injector_text.items():
     clean_injector_text[k]['colour'] = clean_injector_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','')
+    del clean_injector_text[k]["hiddenSelectionsTextures[]"]
 
 st.json(clean_injector_text)
 
