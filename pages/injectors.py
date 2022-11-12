@@ -3,29 +3,30 @@ from streamlit_image_select import image_select
 import cv2
 from glob import glob
 
-with open('medicine_injectors.txt', 'r') as infile:
-    injector_text = {}
-    text = infile.read()
 
-injector_text = {k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text.split('\n\n')]}
+@st.experimental_singleton
+def get_text(filename):
+    with open(filename, 'r') as infile:
+        injector_text = {}
+        text = infile.read()
 
-clean_injector_text = {}
+    injector_text = {k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text.split('\n\n')]}
 
-for k, v in injector_text.items():
-    clean_injector_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v] if kkk.strip() not in ("model","hiddenSelections[]",)}
+    clean_injector_text = {}
 
-for k, v in clean_injector_text.items():
-    clean_injector_text[k]['colour'] = clean_injector_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
-    del clean_injector_text[k]["hiddenSelectionsTextures[]"]
+    for k, v in injector_text.items():
+        clean_injector_text[k.split(' ')[1]] = {kkk.replace('"','').strip():vvv.replace('"','').strip() for kkk,vvv in [vv.split('=') for vv in v] if kkk.strip() not in ("model","hiddenSelections[]",)}
 
-for k,v in clean_injector_text.items():
-    for kk in clean_injector_text[k].keys():
-        if kk.endswith('Level'):
-            st.write(k, kk)
+    for k, v in clean_injector_text.items():
+        clean_injector_text[k]['colour'] = clean_injector_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
+        del clean_injector_text[k]["hiddenSelectionsTextures[]"]
 
+    return clean_injector_text
+
+clean_injector_text = get_text('medicine_injectors.txt')
 st.json(clean_injector_text)
 
-st.write(injector_text)
+#st.write(injector_text)
 
     # for line in infile.readlines():
     #     line = line.strip()
