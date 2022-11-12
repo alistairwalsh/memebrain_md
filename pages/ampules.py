@@ -9,9 +9,9 @@ def get_text(filename):
     with open(filename, 'r') as infile:
         in_text = {}
         text = infile.read()
-    st.json(in_text)
+
     in_text = {k:v.split(';') for k, v in [l.split('{', 1) for l in text.split('\n\n')]} # split on newline, split on '{' then split on ';'
-    
+
     clean_text = {}
 
     for k, v in in_text.items():
@@ -23,6 +23,6 @@ def get_text(filename):
             del clean_text[k]["hiddenSelectionsTextures[]"]
 
     return clean_text
-
+    
 clean_ampules_text = get_text('medicine_ampouls.txt')
 st.json(clean_ampules_text)
