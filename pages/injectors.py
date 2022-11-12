@@ -18,6 +18,11 @@ for k, v in clean_injector_text.items():
     clean_injector_text[k]['colour'] = clean_injector_text[k]["hiddenSelectionsTextures[]"].split('\\')[-1].replace('.paa','').replace('}','').strip()
     del clean_injector_text[k]["hiddenSelectionsTextures[]"]
 
+for k,v in clean_injector_text.items():
+    for kk in clean_injector_text[k].keys():
+        if kk.endswith('Level'):
+            st.write(k, kk)
+
 st.json(clean_injector_text)
 
 st.write(injector_text)
