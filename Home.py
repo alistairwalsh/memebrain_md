@@ -54,7 +54,7 @@ for filename in glob('images/*.png'):
         illness_names.append(name)
         img = cv2.imread(filename)
         st.image(img)
-        st.button('text')
+        st.button('select',key = name)
        
 st.write(illness_names)
 st.write(illness_images)
