@@ -73,8 +73,8 @@ n = 5
 x = list(divide_chunks([(i,ii) for i,ii in zip(illness_images,illness_names)], n))
 
 cols = st.columns(5)
-for c,i in zip(cols,x):
-    for ii in i:
+for i in x:
+    for c, ii in zip(cols,i):
         c.image(cv2.imread(ii[0]), caption = ii[-1],use_column_width = 'always')
 
 option = st.selectbox(label = 'Select your illness', options = illness_names)
