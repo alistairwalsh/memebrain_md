@@ -65,6 +65,10 @@ st.write(st.session_state[n])
 for k in st.session_state.keys():
     if st.session_state[k]:
         st.write(k)
+
+option = st.selectbox(label = 'Select your illness', options = illness_names)
+
+st.write('you have', option)
 # st.write(illness_names)
 # st.write(illness_images)
 
