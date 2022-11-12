@@ -67,8 +67,6 @@ for i in x:
 
 option = st.selectbox(label = 'Select your illness', options = illness_names)
 
-st.write('you have', option)
-
 st.write('you should do',dict_ill_2_cure[option])
 
 @st.experimental_singleton
@@ -105,10 +103,9 @@ for med_type in [clean_injectors_text,clean_ampules_text,clean_salve_text,clean_
     for med_type_k, med_type_v in med_type.items():
         treatments = [k for k in med_type[med_type_k].keys() if k == dict_ill_2_cure[option]]
         if treatments:
-            st.write(med_type_k)
+            st.write(med_type_k, med_type[med_type_k]['colour'])
 
 
-st.json(clean_tablet_text)
 # st.write(illness_names)
 # st.write(illness_images)
 
