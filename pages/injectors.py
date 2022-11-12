@@ -12,7 +12,7 @@ injector_text = {k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text
 clean_injector_text = {}
 
 for k, v in injector_text.items():
-    st.json({kkk.strip():vvv.strip() for kkk,vvv in [vv.split('=') for vv in v] if kkk not in ("model","hiddenSelections[]",)})
+    st.json({kkk.strip():vvv.strip() for kkk,vvv in [vv.split('=') for vv in v] if kkk.strip() not in ("model","hiddenSelections[]",)})
 
 st.write(injector_text)
 
