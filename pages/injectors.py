@@ -7,7 +7,12 @@ with open('medicine_injectors.txt', 'r') as infile:
     injector_text = {}
     text = infile.read()
 
-st.write({k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text.split('\n\n')]})
+injector_text = {k:v.split(';')[1:-4] for k, v in [l.split('{', 1) for l in text.split('\n\n')]}
+
+for k, v in injector_text.items():
+    st.json({kkk.strip():vvv.strip() for kkk,vvv in vv.split('=') for vv in v})
+
+st.write(injector_text)
 
     # for line in infile.readlines():
     #     line = line.strip()
