@@ -56,11 +56,7 @@ for filename in glob('images/*.png'):
         illness_names.append(name)
 
 for i,n in zip(illness_images, illness_names):
-    st.image(cv2.imread(i))
-    clicked = st.button(key = n, label = n)
-
-
-st.write(st.session_state[n])
+    st.image(cv2.imread(i), caption = n)
 
 for k in st.session_state.keys():
     if st.session_state[k]:
