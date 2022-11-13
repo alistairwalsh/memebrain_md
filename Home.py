@@ -126,6 +126,8 @@ salves = get_relevant(clean_salve_text)
 
 tablets = get_relevant(clean_tablet_text) 
 
+st.write(injectors)
+
 if injectors:
     st.header('Injectors')
     st.write(injectors)
