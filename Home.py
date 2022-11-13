@@ -132,22 +132,22 @@ st.write(injectors)
 if injectors:
     st.header('Injectors')
     for injector in injectors:
-        st.write(injector[1], text_dict[med_type_k]['colour'].split('_')[-2], text_dict[med_type_k][dict_ill_2_cure[option]])
+        st.write(injector[1], injectors[med_type_k]['colour'].split('_')[-2], injectors[med_type_k][dict_ill_2_cure[option]])
 
 if ampules:
     st.header('Ampules')
     for ampule in ampules:
-        st.write(ampule[1], text_dict[med_type_k]['colour'].split('_')[-2], text_dict[med_type_k][dict_ill_2_cure[option]])
+        st.write(ampule[1], ampules[med_type_k]['colour'].split('_')[-2], ampules[med_type_k][dict_ill_2_cure[option]])
 
 if salves:
     st.header('Salves')
     for salve in salves:
-        st.write(salve[1], text_dict[med_type_k]['colour'].split('_')[-2], text_dict[med_type_k][dict_ill_2_cure[option]])
+        st.write(salve[1], salves[med_type_k]['colour'].split('_')[-2], salves[med_type_k][dict_ill_2_cure[option]])
 
 if tablets:
     st.header('Tablets')
     for tablet in tablets:
-        st.write(tablet[1], text_dict[med_type_k]['colour'].split('_')[-2], text_dict[med_type_k][dict_ill_2_cure[option]])
+        st.write(tablet[1], tablets[med_type_k]['colour'].split('_')[-2], tablets[med_type_k][dict_ill_2_cure[option]])
 
 
 
