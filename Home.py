@@ -108,11 +108,12 @@ def get_relevant(text_dict):
 
     for med_type_k in text_dict.keys():
         treatments = [k for k in text_dict[med_type_k].keys() if k == dict_ill_2_cure[option]]
-        if treatments:
-            for treatment in treatments:
-                r = re.findall('([A-Z][a-z]+)', med_type_k)
-                r_list.append(r)
-        return r_list 
+        
+        for treatment in treatments:
+            r = re.findall('([A-Z][a-z]+)', med_type_k)
+            r_list.append(r)
+    
+    return r_list 
 
 # r[1], text_dict[med_type_k]['colour'].split('_')[-2], text_dict[med_type_k][dict_ill_2_cure[option]]
 
